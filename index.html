@@ -228,7 +228,7 @@ body { font-family: 'Calibri', 'Carlito', 'Trebuchet MS', Arial, sans-serif; bac
 .data-table thead th:not(.sort-asc):not(.sort-desc) .sort-arrow::after { content: ' ⇅'; }
 
 /* LinkedIn post title — wrap instead of truncate */
-.li-title-cell { font-weight: 600; color: var(--navy); font-size: 13px; max-width: 320px; word-break: break-word; line-height: 1.4; display: block; }
+.li-title-cell { font-weight: 600; color: var(--navy); font-size: 13px; max-width: 320px; display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 
 
 /* ─── BADGES ─────────────────────────────────────────── */
@@ -907,7 +907,6 @@ textarea.s-input { resize: vertical; min-height: 90px; }
   <button class="nav-tab" onclick="switchTab('content')">Content Ideas <span class="nav-chip" id="cnt-co">0</span></button>
   <button class="nav-tab" onclick="switchTab('campaigns')">Campaigns <span class="nav-chip" id="cnt-camp">0</span></button>
   <button class="nav-tab" onclick="switchTab('casestudies')">Case Studies <span class="nav-chip" id="cnt-cs">0</span></button>
-  <button class="nav-tab" onclick="switchTab('library')">Content Library <span class="nav-chip" id="cnt-lib">0</span></button>
   <button class="nav-tab" onclick="switchTab('website')">Website &#9660;</button>
   <button class="nav-tab" onclick="switchTab('integrations')" id="tab-int">&#9889; Integrations</button>
   <button class="nav-tab nav-report" onclick="switchTab('report')">&#9654; Report</button>
@@ -2642,7 +2641,7 @@ function saveLibEntry() {
 
 
 function switchTab(name) {
-  const names = ['dashboard','linkedin','newsletter','insights','content','campaigns','casestudies','library','website','integrations','report'];
+  const names = ['dashboard','linkedin','newsletter','insights','content','campaigns','casestudies','website','integrations','report'];
   document.querySelectorAll('.nav-tab').forEach((t,i) => t.classList.toggle('active', names[i]===name));
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.getElementById('sec-'+name).classList.add('active');
@@ -5218,7 +5217,7 @@ function renderWebsite() {
 }
 
 function renderAll() {
-  renderDashboard(); renderLinkedIn(); renderNewsletter(); renderInsights(); renderContent(); renderCampaigns(); renderCaseStudies(); renderLibrary();
+  renderDashboard(); renderLinkedIn(); renderNewsletter(); renderInsights(); renderContent(); renderCampaigns(); renderCaseStudies();
 }
 
 // ── Boot: load from Supabase, fall back to defaults ──────────────
