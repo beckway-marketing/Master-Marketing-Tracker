@@ -796,11 +796,84 @@ textarea.s-input { resize: vertical; min-height: 90px; }
 .cs-paused    { background:var(--amber-bg); color:var(--amber); }
 .cs-complete  { background:var(--surface-3); color:var(--text-2); }
 
+/* ─── DASHBOARD ──────────────────────────────────── */
+.dash-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; margin-bottom: 22px; }
+.dash-big-grid { display: grid; grid-template-columns: 1fr 380px; gap: 20px; align-items: start; margin-bottom: 22px; }
+.dash-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); }
+.dash-card-head { padding: 14px 18px 10px; border-bottom: 1px solid var(--border-2); display: flex; align-items: center; justify-content: space-between; }
+.dash-card-title { font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .7px; color: var(--text-2); }
+.dash-card-body { padding: 16px 18px; }
+
+/* KPI tile */
+.kpi-tile { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px 18px; box-shadow: var(--shadow-xs); }
+.kpi-tile-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--text-3); margin-bottom: 6px; }
+.kpi-tile-value { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; color: var(--navy); line-height: 1; letter-spacing: -1px; }
+.kpi-tile-sub { font-size: 11px; color: var(--text-3); margin-top: 4px; }
+.kpi-tile-delta { font-size: 11px; font-weight: 700; margin-top: 4px; }
+.kpi-tile-delta.up   { color: var(--green); }
+.kpi-tile-delta.down { color: var(--red); }
+.kpi-tile.accent-orange { border-left: 3px solid var(--orange); }
+.kpi-tile.accent-green  { border-left: 3px solid var(--green); }
+.kpi-tile.accent-blue   { border-left: 3px solid var(--blue); }
+.kpi-tile.accent-navy   { border-left: 3px solid var(--navy); }
+
+/* Calendar */
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: var(--border); border-radius: var(--radius); overflow: hidden; }
+.cal-day-head { background: var(--surface-2); padding: 6px 4px; text-align: center; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--text-3); }
+.cal-day { background: var(--surface); min-height: 72px; padding: 5px 6px; vertical-align: top; }
+.cal-day.other-month { background: var(--surface-2); }
+.cal-day.today { background: #fff8f0; }
+.cal-day-num { font-size: 11px; font-weight: 700; color: var(--text-3); margin-bottom: 3px; }
+.cal-day.today .cal-day-num { color: var(--orange); }
+.cal-event { font-size: 10px; border-radius: 3px; padding: 1px 5px; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; font-weight: 500; }
+.cal-event.ev-newsletter { background: var(--green-bg); color: var(--green); }
+.cal-event.ev-insight    { background: var(--blue-bg); color: var(--blue); }
+.cal-event.ev-campaign   { background: var(--orange-dim); color: var(--orange); }
+.cal-event.ev-linkedin   { background: #e0f0ff; color: #0a66c2; }
+.cal-event.ev-content    { background: var(--purple-bg); color: var(--purple); }
+.cal-nav { display: flex; align-items: center; gap: 10px; }
+.cal-nav-btn { background: none; border: 1.5px solid var(--border); border-radius: 6px; cursor: pointer; padding: 3px 10px; font-size: 14px; color: var(--text-2); }
+.cal-nav-btn:hover { background: var(--surface-3); }
+.cal-month-label { font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 700; color: var(--navy); }
+
+/* Activity feed */
+.feed-item { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border-2); align-items: flex-start; }
+.feed-item:last-child { border-bottom: none; }
+.feed-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 4px; flex-shrink: 0; }
+.feed-text { flex: 1; font-size: 12px; color: var(--text-2); line-height: 1.4; }
+.feed-text strong { color: var(--navy); font-weight: 600; }
+.feed-time { font-size: 11px; color: var(--text-3); white-space: nowrap; }
+
+/* Upcoming list */
+.upcoming-item { display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border-2); align-items: flex-start; }
+.upcoming-item:last-child { border-bottom: none; }
+.upcoming-date-box { width: 38px; text-align: center; flex-shrink: 0; }
+.upcoming-date-mon { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--text-3); }
+.upcoming-date-day { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 800; color: var(--navy); line-height: 1; }
+.upcoming-body { flex: 1; }
+.upcoming-title { font-size: 12px; font-weight: 600; color: var(--navy); }
+.upcoming-sub   { font-size: 11px; color: var(--text-3); margin-top: 1px; }
+
+/* ─── WEBSITE PERFORMANCE ────────────────────────── */
+.web-upload-prompt { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 52px; text-align: center; gap: 12px; }
+.web-kpi-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 22px; }
+.web-bench { background: var(--surface-2); border-radius: var(--radius); padding: 12px 14px; }
+.web-bench-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--text-3); margin-bottom: 10px; }
+.bench-row { display: flex; align-items: center; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid var(--border-2); font-size: 12px; }
+.bench-row:last-child { border-bottom: none; }
+.bench-metric { color: var(--text-2); }
+.bench-pair { display: flex; gap: 16px; }
+.bench-val { font-weight: 700; color: var(--navy); }
+.bench-val.behind { color: var(--red); }
+.bench-val.ahead   { color: var(--green); }
+.web-channel-row { display: grid; grid-template-columns: 1fr 60px 80px; gap: 8px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border-2); font-size: 12px; }
+.web-channel-row:last-child { border-bottom: none; }
+
 @media print {
   .app-header, .nav-rail, .settings-panel, .btn, .row-actions, .stat-strip { display:none !important; }
   .main { margin-top:0; padding:0; }
   .section { display:block !important; }
-  #sec-linkedin, #sec-newsletter, #sec-insights, #sec-content, #sec-campaigns, #sec-casestudies, #sec-library, #sec-integrations { display:none !important; }
+  #sec-dashboard, #sec-linkedin, #sec-newsletter, #sec-insights, #sec-content, #sec-campaigns, #sec-casestudies, #sec-library, #sec-website, #sec-integrations { display:none !important; }
   .report-layout { grid-template-columns:1fr; }
   .slide { break-inside:avoid; margin-bottom:16px; box-shadow:none; border:1px solid #ddd; }
 }
@@ -826,14 +899,16 @@ textarea.s-input { resize: vertical; min-height: 90px; }
 </header>
 
 <!-- ─── NAV ─── -->
-<nav class="nav-rail">
-  <button class="nav-tab active" onclick="switchTab('linkedin')">LinkedIn <span class="nav-chip" id="cnt-li">0</span></button>
+<nav class="nav-rail" style="overflow-x:auto">
+  <button class="nav-tab active" onclick="switchTab('dashboard')">&#9632; Dashboard</button>
+  <button class="nav-tab" onclick="switchTab('linkedin')">LinkedIn <span class="nav-chip" id="cnt-li">0</span></button>
   <button class="nav-tab" onclick="switchTab('newsletter')">Newsletter <span class="nav-chip" id="cnt-nl">0</span></button>
   <button class="nav-tab" onclick="switchTab('insights')">Insights <span class="nav-chip" id="cnt-ins">0</span></button>
   <button class="nav-tab" onclick="switchTab('content')">Content Ideas <span class="nav-chip" id="cnt-co">0</span></button>
   <button class="nav-tab" onclick="switchTab('campaigns')">Campaigns <span class="nav-chip" id="cnt-camp">0</span></button>
   <button class="nav-tab" onclick="switchTab('casestudies')">Case Studies <span class="nav-chip" id="cnt-cs">0</span></button>
   <button class="nav-tab" onclick="switchTab('library')">Content Library <span class="nav-chip" id="cnt-lib">0</span></button>
+  <button class="nav-tab" onclick="switchTab('website')">Website &#9660;</button>
   <button class="nav-tab" onclick="switchTab('integrations')" id="tab-int">&#9889; Integrations</button>
   <button class="nav-tab nav-report" onclick="switchTab('report')">&#9654; Report</button>
 </nav>
@@ -841,8 +916,116 @@ textarea.s-input { resize: vertical; min-height: 90px; }
 <!-- ─── MAIN ─── -->
 <main class="main">
 
+  <!-- DASHBOARD -->
+  <section class="section active" id="sec-dashboard">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Dashboard</div>
+        <div class="page-sub">Content calendar and live overview of all marketing activity</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="btn btn-ghost" id="dash-prev-month" onclick="dashChangeMonth(-1)">&#8592;</button>
+        <span class="cal-month-label" id="dash-month-label"></span>
+        <button class="btn btn-ghost" id="dash-next-month" onclick="dashChangeMonth(1)">&#8594;</button>
+      </div>
+    </div>
+
+    <!-- KPI strip -->
+    <div class="dash-grid" id="dash-kpi-grid"></div>
+
+    <!-- Calendar + Upcoming -->
+    <div class="dash-big-grid">
+      <div class="dash-card">
+        <div class="dash-card-head">
+          <span class="dash-card-title">Content Calendar</span>
+          <div style="display:flex;gap:6px;font-size:10px">
+            <span style="background:var(--green-bg);color:var(--green);padding:2px 7px;border-radius:10px;font-weight:700">Newsletter</span>
+            <span style="background:#e0f0ff;color:#0a66c2;padding:2px 7px;border-radius:10px;font-weight:700">LinkedIn</span>
+            <span style="background:var(--orange-dim);color:var(--orange);padding:2px 7px;border-radius:10px;font-weight:700">Campaign</span>
+            <span style="background:var(--blue-bg);color:var(--blue);padding:2px 7px;border-radius:10px;font-weight:700">Insight</span>
+          </div>
+        </div>
+        <div class="dash-card-body" style="padding:12px">
+          <div class="cal-grid" id="dash-cal-headers"></div>
+          <div class="cal-grid" id="dash-cal-days"></div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <!-- Upcoming -->
+        <div class="dash-card">
+          <div class="dash-card-head"><span class="dash-card-title">Up Next</span></div>
+          <div class="dash-card-body" style="padding:12px 16px" id="dash-upcoming"></div>
+        </div>
+        <!-- Activity / Status -->
+        <div class="dash-card">
+          <div class="dash-card-head"><span class="dash-card-title">In Progress</span></div>
+          <div class="dash-card-body" style="padding:12px 16px" id="dash-inprogress"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second row: channel breakdown -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+      <div class="dash-card">
+        <div class="dash-card-head"><span class="dash-card-title">Newsletter Pipeline</span></div>
+        <div class="dash-card-body" id="dash-nl-summary" style="padding:12px 16px"></div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-head"><span class="dash-card-title">Insights Pipeline</span></div>
+        <div class="dash-card-body" id="dash-ins-summary" style="padding:12px 16px"></div>
+      </div>
+      <div class="dash-card">
+        <div class="dash-card-head"><span class="dash-card-title">Campaign Activity</span></div>
+        <div class="dash-card-body" id="dash-camp-summary" style="padding:12px 16px"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEBSITE PERFORMANCE -->
+  <section class="section" id="sec-website">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Website Performance</div>
+        <div class="page-sub">GA4 analytics — upload your export from the Integrations tab to populate</div>
+      </div>
+      <button class="btn btn-ghost" onclick="switchTab('integrations')">&#9889; Upload GA4 Data</button>
+    </div>
+    <div id="web-no-data" class="dash-card">
+      <div class="web-upload-prompt">
+        <div style="font-size:40px">📊</div>
+        <div style="font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:var(--navy)">No GA4 data loaded yet</div>
+        <div style="font-size:13px;color:var(--text-3);max-width:320px;line-height:1.5">Export your GA4 data from the Integrations tab (Google Analytics card → Upload Report), then come back here to see your website analytics.</div>
+        <button class="btn btn-primary" onclick="switchTab('integrations')">Go to Integrations ↗</button>
+      </div>
+    </div>
+    <div id="web-data-view" style="display:none">
+      <div class="web-kpi-grid" id="web-kpi-grid"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px">
+        <div class="dash-card">
+          <div class="dash-card-head"><span class="dash-card-title">vs. Industry Benchmarks</span></div>
+          <div class="dash-card-body" id="web-benchmarks"></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-head"><span class="dash-card-title">Traffic by Channel</span><span id="web-channel-note" style="font-size:11px;color:var(--text-3)"></span></div>
+          <div class="dash-card-body" id="web-channels"></div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+        <div class="dash-card">
+          <div class="dash-card-head"><span class="dash-card-title">Visitor Demographics</span><span style="font-size:11px;color:var(--text-3)">from LinkedIn Analytics</span></div>
+          <div class="dash-card-body" id="web-demographics"></div>
+        </div>
+        <div class="dash-card">
+          <div class="dash-card-head"><span class="dash-card-title">Page Performance</span></div>
+          <div class="dash-card-body" id="web-pages"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- LINKEDIN -->
-  <section class="section active" id="sec-linkedin">
+  <section class="section" id="sec-linkedin">
     <div class="page-header">
       <div>
         <div class="page-title">LinkedIn Posts</div>
@@ -2459,7 +2642,7 @@ function saveLibEntry() {
 
 
 function switchTab(name) {
-  const names = ['linkedin','newsletter','insights','content','campaigns','casestudies','library','integrations','report'];
+  const names = ['dashboard','linkedin','newsletter','insights','content','campaigns','casestudies','library','website','integrations','report'];
   document.querySelectorAll('.nav-tab').forEach((t,i) => t.classList.toggle('active', names[i]===name));
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.getElementById('sec-'+name).classList.add('active');
@@ -2467,6 +2650,8 @@ function switchTab(name) {
   if (name==='library') renderLibrary();
   if (name==='casestudies') renderCaseStudies();
   if (name==='campaigns') renderCampaigns();
+  if (name==='dashboard') renderDashboard();
+  if (name==='website')   renderWebsite();
 }
 
 // ════════════════════════════════════════════════════
@@ -3092,8 +3277,9 @@ function applyGAToReport() {
   if (!gaData) return;
   document.getElementById('s-web-actual').value = gaData.users;
   renderReport();
+  renderWebsite();
   gaAlert('Website metrics applied to your report.', 'success');
-  setTimeout(() => switchTab('report'), 800);
+  setTimeout(() => switchTab('website'), 800);
 }
 
 
@@ -4658,8 +4844,381 @@ function saveAssetEntry() {
   openCampDetail(activeCampId); queueSave();
 }
 
+// ════════════════════════════════════════════════════
+// DASHBOARD
+// ════════════════════════════════════════════════════
+let dashYear  = new Date().getFullYear();
+let dashMonth = new Date().getMonth(); // 0-indexed
+
+function dashChangeMonth(delta) {
+  dashMonth += delta;
+  if (dashMonth < 0)  { dashMonth = 11; dashYear--; }
+  if (dashMonth > 11) { dashMonth = 0;  dashYear++; }
+  renderDashboard();
+}
+
+const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const MONTH_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const DAY_ABBR    = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+function renderDashboard() {
+  const today = new Date();
+
+  // ── month label
+  const lbl = document.getElementById('dash-month-label');
+  if (lbl) lbl.textContent = MONTH_NAMES[dashMonth] + ' ' + dashYear;
+
+  // ── KPI tiles
+  const liData = db.linkedin.filter(p => p.impressions !== '' && p.impressions !== null && p.impressions !== undefined);
+  const totalImp   = liData.reduce((s,p)=>s+Number(p.impressions||0),0);
+  const avgEng     = (() => {
+    const r = liData.filter(p=>p.engRate).map(p=>parseFloat(p.engRate));
+    return r.length ? (r.reduce((a,b)=>a+b,0)/r.length).toFixed(1)+'%' : '—';
+  })();
+  const nlSent     = db.newsletter.filter(n=>n.status==='Sent').length;
+  const campActive = (db.campaigns||[]).filter(c=>c.status==='Active').length;
+  const insDone    = db.insights.filter(i=>i.complete==='Yes').length;
+
+  const kpiGrid = document.getElementById('dash-kpi-grid');
+  if (kpiGrid) kpiGrid.innerHTML = [
+    {label:'LinkedIn Posts',    val:db.linkedin.length,        sub:'Tracked this period',      accent:'accent-blue'},
+    {label:'Total Impressions', val:totalImp.toLocaleString(), sub:'Across all tracked posts',  accent:'accent-orange'},
+    {label:'Avg Engagement',    val:avgEng,                    sub:'Benchmark: 2–5%',           accent:'accent-green'},
+    {label:'Newsletters Sent',  val:nlSent,                    sub:`${db.newsletter.filter(n=>n.status==='Opener drafted').length} in draft`, accent:'accent-navy'},
+    {label:'Active Campaigns',  val:campActive,                sub:`${(db.campaigns||[]).length} total`, accent:'accent-orange'},
+    {label:'Insights Complete', val:insDone,                   sub:`of ${db.insights.length} total`,     accent:'accent-green'},
+    {label:'Case Studies',      val:db.casestudies.length,     sub:'In index',                  accent:'accent-navy'},
+    {label:'Content Ideas',     val:db.content.length,         sub:'In pipeline',               accent:'accent-blue'},
+  ].map(k=>`<div class="kpi-tile ${k.accent}">
+    <div class="kpi-tile-label">${k.label}</div>
+    <div class="kpi-tile-value">${k.val}</div>
+    <div class="kpi-tile-sub">${k.sub}</div>
+  </div>`).join('');
+
+  // ── Calendar
+  buildCalendar();
+
+  // ── Upcoming
+  buildUpcoming();
+
+  // ── In Progress
+  buildInProgress();
+
+  // ── Bottom summaries
+  buildNLSummary();
+  buildInsSummary();
+  buildCampSummary();
+}
+
+function buildCalendar() {
+  const headEl = document.getElementById('dash-cal-headers');
+  const daysEl = document.getElementById('dash-cal-days');
+  if (!headEl || !daysEl) return;
+
+  headEl.innerHTML = DAY_ABBR.map(d=>`<div class="cal-day-head">${d}</div>`).join('');
+
+  const today    = new Date();
+  const firstDay = new Date(dashYear, dashMonth, 1).getDay(); // 0=Sun
+  const daysInMonth = new Date(dashYear, dashMonth+1, 0).getDate();
+  const daysInPrev  = new Date(dashYear, dashMonth, 0).getDate();
+
+  // Build event map: day → [{label, cls}]
+  const evMap = {};
+  const addEv = (dateStr, label, cls) => {
+    if (!dateStr) return;
+    // parse "Jan 2026" → no specific day, skip
+    // parse "02/15/2026" or "2026-02-15"
+    let d;
+    const mdy = dateStr.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+    const ymd = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (mdy) d = new Date(parseInt(mdy[3]), parseInt(mdy[1])-1, parseInt(mdy[2]));
+    else if (ymd) d = new Date(parseInt(ymd[1]), parseInt(ymd[2])-1, parseInt(ymd[3]));
+    if (!d || isNaN(d) || d.getMonth()!==dashMonth || d.getFullYear()!==dashYear) return;
+    const k = d.getDate();
+    if (!evMap[k]) evMap[k] = [];
+    evMap[k].push({label, cls});
+  };
+
+  // newsletters — first of each month
+  db.newsletter.forEach(n => {
+    const mIdx = MONTH_SHORT.findIndex(m => (n.month||'').startsWith(m));
+    const yr   = (n.month||'').match(/\d{4}/);
+    if (mIdx !== -1 && yr && parseInt(yr[0])===dashYear && mIdx===dashMonth)
+      addEv(`${String(dashMonth+1).padStart(2,'0')}/01/${dashYear}`, n.audience||'Newsletter', 'ev-newsletter');
+  });
+
+  // LinkedIn posts
+  db.linkedin.forEach(p => addEv(p.date, p.title ? p.title.slice(0,22)+'…' : 'LinkedIn Post', 'ev-linkedin'));
+
+  // Campaigns — start dates
+  (db.campaigns||[]).forEach(c => { if (c.startDate) addEv(c.startDate, c.name||'Campaign', 'ev-campaign'); });
+
+  // Insights — date requested
+  db.insights.forEach(i => addEv(i.dateRequested, i.topic||'Insight', 'ev-insight'));
+
+  // Render cells
+  let cells = '';
+  const totalCells = Math.ceil((firstDay + daysInMonth) / 7) * 7;
+  for (let i = 0; i < totalCells; i++) {
+    const dayNum = i - firstDay + 1;
+    const isCurrentMonth = dayNum >= 1 && dayNum <= daysInMonth;
+    const displayNum = isCurrentMonth ? dayNum : (dayNum <= 0 ? daysInPrev + dayNum : dayNum - daysInMonth);
+    const isToday = isCurrentMonth && dayNum===today.getDate() && dashMonth===today.getMonth() && dashYear===today.getFullYear();
+    const cls = !isCurrentMonth ? 'other-month' : isToday ? 'today' : '';
+    const events = isCurrentMonth && evMap[dayNum] ? evMap[dayNum] : [];
+    const eventHtml = events.slice(0,3).map(e=>`<div class="cal-event ${e.cls}" title="${esc(e.label)}">${esc(e.label)}</div>`).join('') +
+      (events.length>3 ? `<div class="cal-event" style="color:var(--text-3);background:transparent">+${events.length-3} more</div>` : '');
+    cells += `<div class="cal-day ${cls}"><div class="cal-day-num">${displayNum}</div>${eventHtml}</div>`;
+  }
+  daysEl.innerHTML = cells;
+}
+
+function buildUpcoming() {
+  const el = document.getElementById('dash-upcoming');
+  if (!el) return;
+  const today = new Date(); today.setHours(0,0,0,0);
+  const items = [];
+
+  // Next newsletters not yet sent
+  db.newsletter.filter(n=>n.status!=='Sent').forEach(n => {
+    const mIdx = MONTH_SHORT.findIndex(m=>(n.month||'').startsWith(m));
+    const yr = (n.month||'').match(/\d{4}/);
+    if (mIdx!==-1 && yr) {
+      const d = new Date(parseInt(yr[0]), mIdx, 1);
+      if (d >= today) items.push({ date:d, title: (n.audience||'Newsletter')+' Newsletter', sub:'Status: '+n.status, type:'newsletter' });
+    }
+  });
+
+  // Campaigns ending soon
+  (db.campaigns||[]).filter(c=>c.status==='Active'&&c.endDate).forEach(c => {
+    const d = new Date(c.endDate);
+    if (!isNaN(d) && d >= today) items.push({ date:d, title:c.name, sub:'Campaign ends', type:'campaign' });
+  });
+
+  // Insights not yet complete
+  db.insights.filter(i=>i.complete!=='Yes').forEach(i => {
+    const d = new Date(i.dateRequested);
+    if (!isNaN(d)) items.push({ date:d, title:i.topic||'Insight', sub:'By: '+i.author, type:'insight' });
+  });
+
+  items.sort((a,b)=>a.date-b.date);
+  const colorMap = {newsletter:'var(--green)',campaign:'var(--orange)',insight:'var(--blue)',linkedin:'#0a66c2'};
+
+  el.innerHTML = items.slice(0,6).map(item => `
+    <div class="upcoming-item">
+      <div class="upcoming-date-box">
+        <div class="upcoming-date-mon">${MONTH_SHORT[item.date.getMonth()]}</div>
+        <div class="upcoming-date-day">${item.date.getDate()}</div>
+      </div>
+      <div class="upcoming-body">
+        <div class="upcoming-title">${esc(item.title)}</div>
+        <div class="upcoming-sub">${esc(item.sub)}</div>
+      </div>
+      <div style="width:6px;height:6px;border-radius:50%;background:${colorMap[item.type]||'var(--navy)'};margin-top:5px;flex-shrink:0"></div>
+    </div>`).join('') || '<div style="font-size:12px;color:var(--text-3);padding:8px 0">Nothing scheduled — add items to your trackers.</div>';
+}
+
+function buildInProgress() {
+  const el = document.getElementById('dash-inprogress');
+  if (!el) return;
+  const items = [];
+
+  db.newsletter.filter(n=>n.status==='Opener drafted').forEach(n =>
+    items.push({ dot:'var(--green)', text:`<strong>${n.month} Newsletter</strong> — opener drafted`, sub:n.audience }));
+
+  db.insights.filter(i=>i.submitted==='Yes'&&i.complete!=='Yes').forEach(i =>
+    items.push({ dot:'var(--blue)', text:`<strong>${esc(i.topic)}</strong> — submitted, pending final`, sub:i.author }));
+
+  db.insights.filter(i=>i.submitted!=='Yes'&&i.complete!=='Yes').slice(0,3).forEach(i =>
+    items.push({ dot:'var(--amber)', text:`<strong>${esc(i.topic)}</strong> — waiting on author`, sub:i.author }));
+
+  (db.campaigns||[]).filter(c=>c.status==='Active').forEach(c => {
+    const pending = (c.assets||[]).filter(a=>a.status==='In Progress'||a.status==='In Review').length;
+    if (pending) items.push({ dot:'var(--orange)', text:`<strong>${esc(c.name)}</strong> — ${pending} asset${pending!==1?'s':''} in flight`, sub:'Campaign' });
+  });
+
+  el.innerHTML = items.slice(0,7).map(i=>`
+    <div class="feed-item">
+      <div class="feed-dot" style="background:${i.dot}"></div>
+      <div class="feed-text">${i.text}<br><span style="color:var(--text-3);font-size:11px">${esc(i.sub||'')}</span></div>
+    </div>`).join('') || '<div style="font-size:12px;color:var(--text-3);padding:8px 0">Nothing currently in progress.</div>';
+}
+
+function buildNLSummary() {
+  const el = document.getElementById('dash-nl-summary');
+  if (!el) return;
+  const sent    = db.newsletter.filter(n=>n.status==='Sent');
+  const drafted = db.newsletter.filter(n=>n.status==='Opener drafted');
+  const planned = db.newsletter.filter(n=>n.status==='Planned');
+  el.innerHTML = `
+    <div class="info-row"><span class="info-label">Sent</span><span class="info-value">${sent.length}</span></div>
+    <div class="info-row"><span class="info-label">Opener Drafted</span><span class="info-value">${drafted.length}</span></div>
+    <div class="info-row"><span class="info-label">Planned</span><span class="info-value">${planned.length}</span></div>
+    <div class="info-row" style="border-bottom:none;padding-top:8px">
+      ${drafted.slice(0,2).map(n=>`<div style="font-size:11px;color:var(--text-2);padding:2px 0">📝 ${esc(n.month)} — ${esc(n.audience)}</div>`).join('')}
+    </div>`;
+}
+
+function buildInsSummary() {
+  const el = document.getElementById('dash-ins-summary');
+  if (!el) return;
+  const complete  = db.insights.filter(i=>i.complete==='Yes').length;
+  const submitted = db.insights.filter(i=>i.submitted==='Yes'&&i.complete!=='Yes').length;
+  const pending   = db.insights.filter(i=>i.submitted!=='Yes').length;
+  el.innerHTML = `
+    <div class="info-row"><span class="info-label">Complete</span><span class="info-value" style="color:var(--green)">${complete}</span></div>
+    <div class="info-row"><span class="info-label">Submitted / In Review</span><span class="info-value" style="color:var(--amber)">${submitted}</span></div>
+    <div class="info-row"><span class="info-label">Waiting on Author</span><span class="info-value" style="color:var(--text-3)">${pending}</span></div>
+    <div class="info-row" style="border-bottom:none;padding-top:8px">
+      ${db.insights.filter(i=>i.complete!=='Yes').slice(0,2).map(i=>`<div style="font-size:11px;color:var(--text-2);padding:2px 0">⏳ ${esc(i.topic)}</div>`).join('')}
+    </div>`;
+}
+
+function buildCampSummary() {
+  const el = document.getElementById('dash-camp-summary');
+  if (!el) return;
+  const camps = db.campaigns||[];
+  const active   = camps.filter(c=>c.status==='Active');
+  const planning = camps.filter(c=>c.status==='Planning');
+  const complete = camps.filter(c=>c.status==='Complete');
+  el.innerHTML = `
+    <div class="info-row"><span class="info-label">Active</span><span class="info-value" style="color:var(--green)">${active.length}</span></div>
+    <div class="info-row"><span class="info-label">Planning</span><span class="info-value" style="color:var(--purple)">${planning.length}</span></div>
+    <div class="info-row"><span class="info-label">Complete</span><span class="info-value">${complete.length}</span></div>
+    <div class="info-row" style="border-bottom:none;padding-top:8px">
+      ${active.slice(0,2).map(c=>`<div style="font-size:11px;color:var(--text-2);padding:2px 0">🎯 ${esc(c.name)}</div>`).join('')}
+    </div>`;
+}
+
+// ════════════════════════════════════════════════════
+// WEBSITE PERFORMANCE
+// ════════════════════════════════════════════════════
+function renderWebsite() {
+  const noData  = document.getElementById('web-no-data');
+  const dataView= document.getElementById('web-data-view');
+  if (!gaData) {
+    if (noData)   noData.style.display   = '';
+    if (dataView) dataView.style.display = 'none';
+    return;
+  }
+  if (noData)   noData.style.display   = 'none';
+  if (dataView) dataView.style.display = '';
+
+  // KPI tiles
+  const kpiGrid = document.getElementById('web-kpi-grid');
+  if (kpiGrid) kpiGrid.innerHTML = [
+    { label:'Total Users',       val: gaData.users,      sub: 'Reporting period', accent:'accent-navy' },
+    { label:'Sessions',          val: gaData.sessions,   sub: 'Total visits',     accent:'accent-blue' },
+    { label:'Engagement Rate',   val: gaData.engRate||'—', sub:'Benchmark: 19–22%', accent:'accent-green' },
+    { label:'Bounce Rate',       val: gaData.bounceRate||'—', sub:'Benchmark: 70–85%', accent:'accent-orange' },
+  ].map(k=>`<div class="kpi-tile ${k.accent}">
+    <div class="kpi-tile-label">${k.label}</div>
+    <div class="kpi-tile-value">${k.val}</div>
+    <div class="kpi-tile-sub">${k.sub}</div>
+  </div>`).join('');
+
+  // Benchmarks
+  const benchEl = document.getElementById('web-benchmarks');
+  if (benchEl) {
+    const BENCH = [
+      { metric:'Engagement Rate', beckway: gaData.engRate||'—',    range:'19–22%',  better:'higher' },
+      { metric:'Bounce Rate',     beckway: gaData.bounceRate||'—', range:'70–85%',  better:'lower'  },
+      { metric:'Sessions',        beckway: gaData.sessions||'—',   range:'Varies',  better:'' },
+    ];
+    benchEl.innerHTML = `
+      <div style="display:grid;grid-template-columns:1fr auto auto;gap:4px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--text-3);padding-bottom:8px;border-bottom:1px solid var(--border)">
+        <span>Metric</span><span style="text-align:right">Beckway</span><span style="text-align:right">Benchmark</span>
+      </div>` +
+      BENCH.map(b => {
+        const bNum = parseFloat(String(b.beckway).replace(/[^0-9.]/g,''));
+        const rLow = parseFloat(b.range.split('–')[0]);
+        const rHi  = parseFloat((b.range.split('–')[1]||'').replace(/[^0-9.]/g,''));
+        let cls = '';
+        if (!isNaN(bNum) && !isNaN(rLow) && !isNaN(rHi)) {
+          if (b.better==='higher') cls = bNum >= rLow ? 'ahead' : 'behind';
+          if (b.better==='lower')  cls = bNum <= rHi  ? 'ahead' : 'behind';
+        }
+        return `<div class="bench-row">
+          <span class="bench-metric">${b.metric}</span>
+          <span class="bench-val ${cls}">${b.beckway}</span>
+          <span style="font-size:11px;color:var(--text-3)">${b.range}</span>
+        </div>`;
+      }).join('') +
+      `<div style="font-size:11px;color:var(--text-3);margin-top:10px;line-height:1.4">Benchmarks sourced from industry averages for B2B professional services sites.</div>`;
+  }
+
+  // Channels (from LinkedIn visitor data if available)
+  const chanEl = document.getElementById('web-channels');
+  const chanNote = document.getElementById('web-channel-note');
+  if (chanEl) {
+    if (liData && liData.visitors && liData.visitors.byLocation && liData.visitors.byLocation.length) {
+      chanNote.textContent = '(from LinkedIn Visitor Analytics)';
+      const topLoc = liData.visitors.byLocation.slice(0,6);
+      const maxLoc = topLoc[0]?.value||1;
+      chanEl.innerHTML = topLoc.map(l=>`
+        <div class="web-channel-row">
+          <div>
+            <div style="font-size:12px;font-weight:500;color:var(--navy)">${esc(l.label)}</div>
+            <div style="height:4px;background:var(--surface-3);border-radius:2px;margin-top:3px;overflow:hidden">
+              <div style="height:100%;width:${Math.round(l.value/maxLoc*100)}%;background:var(--navy);border-radius:2px"></div>
+            </div>
+          </div>
+          <span style="font-weight:700;color:var(--navy);text-align:right">${l.value.toLocaleString()}</span>
+          <span style="color:var(--text-3);font-size:11px;text-align:right">${Math.round(l.value/topLoc.reduce((s,x)=>s+x.value,0)*100)}%</span>
+        </div>`).join('');
+    } else {
+      chanEl.innerHTML = `<div style="font-size:12px;color:var(--text-3);padding:12px 0">Upload LinkedIn Visitor Analytics in the Integrations tab to see traffic by location and demographics.</div>`;
+    }
+  }
+
+  // Demographics from LinkedIn visitors
+  const demoEl = document.getElementById('web-demographics');
+  if (demoEl) {
+    if (liData && liData.visitors) {
+      const v = liData.visitors;
+      let html = '';
+      if (v.bySeniority?.length) {
+        html += `<div style="font-size:11px;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Visitor Seniority</div>`;
+        const maxS = v.bySeniority[0]?.value||1;
+        html += v.bySeniority.slice(0,5).map(d=>`<div class="web-channel-row">
+          <div><div style="font-size:12px;font-weight:500;color:var(--navy)">${esc(d.label)}</div>
+          <div style="height:4px;background:var(--surface-3);border-radius:2px;margin-top:3px;overflow:hidden">
+            <div style="height:100%;width:${Math.round(d.value/maxS*100)}%;background:var(--orange);border-radius:2px"></div>
+          </div></div>
+          <span style="font-weight:700;color:var(--navy)">${d.value.toLocaleString()}</span>
+          <span></span></div>`).join('');
+      }
+      if (v.byJobFunction?.length) {
+        html += `<div style="font-size:11px;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:.5px;margin:12px 0 6px">Top Job Functions</div>`;
+        html += v.byJobFunction.slice(0,4).map(d=>`<div class="info-row"><span class="info-label">${esc(d.label)}</span><span class="info-value">${d.value.toLocaleString()}</span></div>`).join('');
+      }
+      demoEl.innerHTML = html || '<div style="font-size:12px;color:var(--text-3)">No demographic data loaded.</div>';
+    } else {
+      demoEl.innerHTML = `<div style="font-size:12px;color:var(--text-3);padding:4px 0">Upload LinkedIn Visitor Analytics for visitor demographics.</div>`;
+    }
+  }
+
+  // Pages — goal vs actual
+  const pagesEl = document.getElementById('web-pages');
+  if (pagesEl) {
+    const webGoal   = document.getElementById('s-web-goal')?.value  || '—';
+    const webActual = document.getElementById('s-web-actual')?.value || gaData.users || '—';
+    const gNum = parseFloat(webGoal.replace(/[^0-9.]/g,''));
+    const aNum = parseFloat(webActual.replace(/[^0-9.]/g,''));
+    const pct  = (!isNaN(gNum)&&!isNaN(aNum)&&gNum) ? Math.round(aNum/gNum*100) : null;
+    pagesEl.innerHTML = `
+      <div class="info-row"><span class="info-label">Users (Actual)</span><span class="info-value">${webActual}</span></div>
+      <div class="info-row"><span class="info-label">Users (Goal)</span><span class="info-value">${webGoal}</span></div>
+      ${pct!==null ? `<div class="info-row"><span class="info-label">vs Goal</span><span class="info-value" style="color:${pct>=97?'var(--green)':pct>=85?'var(--amber)':'var(--red)'}">${pct}%</span></div>` : ''}
+      <div class="info-row"><span class="info-label">Sessions</span><span class="info-value">${gaData.sessions}</span></div>
+      <div class="info-row"><span class="info-label">Bounce Rate</span><span class="info-value">${gaData.bounceRate||'—'}</span></div>
+      <div class="info-row" style="border-bottom:none"><span class="info-label">Engagement Rate</span><span class="info-value">${gaData.engRate||'—'}</span></div>
+      <div style="margin-top:12px;font-size:11px;color:var(--text-3)">To see top pages, export a Pages report from GA4 → Engagement → Pages and upload in Integrations.</div>`;
+  }
+}
+
 function renderAll() {
-  renderLinkedIn(); renderNewsletter(); renderInsights(); renderContent(); renderCampaigns(); renderCaseStudies(); renderLibrary();
+  renderDashboard(); renderLinkedIn(); renderNewsletter(); renderInsights(); renderContent(); renderCampaigns(); renderCaseStudies(); renderLibrary();
 }
 
 // ── Boot: load from Supabase, fall back to defaults ──────────────
